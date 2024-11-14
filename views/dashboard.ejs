@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css1/dashboard.css">
+    <style>
+         /* General Styles */
+         body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #7f00ff, #e100ff); /* Purple gradient */
+            color: white; /* White text for contrast */
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background for the header */
+            color: white;
+            padding: 15px 20px; /* Reduced padding for a smaller header */
+            display: flex;
+            justify-content: space-between; /* Space out title and nav */
+            align-items: center;
+            height: 60px; /* Set a slightly smaller fixed height for the header */
+        }
+
+        /* Navigation Links */
+        header nav {
+            display: flex;
+            justify-content: space-around; /* Evenly distribute nav items */
+            width: 100%; /* Make nav take full width of header */
+        }
+
+        header nav a {
+            color: white; /* White color for nav links */
+            text-decoration: none;
+            font-size: 18px; /* Font size for nav items */
+            text-align: center; /* Center text in each nav item */
+        }
+
+        header nav a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Main Content Styles */
+        .content {
+            padding: 20px;
+        }
+
+        /* Alert Block Styles */
+        .alert {
+            background-color: rgba(138, 43, 226, 0.1); /* Slightly transparent violet background */
+            border: 2px solid rgba(255, 255, 255, 0.5); /* Light border */
+            padding: 50px; /* Increased padding for a bigger alert block */
+            border-radius: 8px; /* Rounded corners */
+            font-size: 24px; /* Increased font size for better readability */
+            text-align: center; /* Centered text */
+            margin: 20px 0; /* Margin above and below */
+            min-height: 150px; /* Set a minimum height */
+        }
+
+        /* Bottom Blocks Section */
+        .bottom-blocks {
+            display: flex;
+            justify-content: space-around; /* Space out blocks evenly */
+            margin-top: 20px; /* Margin above the blocks section */
+            padding: 20px 0; /* Padding for the blocks section */
+        }
+
+        .block {
+            background-color: rgba(255, 255, 255, 0.1); /* Transparent white box */
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners */
+            width: 200px; /* Fixed width for the blocks */
+            text-align: center; /* Center text in each block */
+        }
+
+        .block h3 {
+            margin-bottom: 10px; /* Space below the heading */
+            color: #003366; /* Dark blue color for all block titles */
+        }
+
+        /* Block paragraph color */
+        .block p {
+            color: #f0f0f0; /* Light gray color for block text */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <a href="#">Community Form</a>
+            <a href="/insights">Insight</a>
+            <a href="/report">Report</a>
+            <a href="/emergency">Emergency Contact</a>
+            <a href="/legal-support">Legal Support</a>
+            <a href="#">Calendar</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="content">
+        <div class="alert">
+            <h3>Alert: The following states are among the red alert states</h3>
+            <ul>
+                <% states.forEach(function(state) { %>
+                    <li><%= state.name %> (Data: <%= state.data %>)</li>
+                <% }); %>
+            </ul>
+            
+        </div>
+        
+
+        <!-- Bottom Blocks Section -->
+        <div class="bottom-blocks">
+            <div class="block">
+                <h3>Self Defense</h3>
+                <p>Learn about self-defense techniques and strategies.</p>
+            </div>
+            <div class="block">
+                <h3>Mental Health</h3>
+                <p>Resources and support for mental well-being.</p>
+            </div>
+            <div class="block">
+                <h3>Safety Tips</h3>
+                <p>Essential tips to stay safe in various situations.</p>
+            </div>
+            <div class="block">
+                <h3>Harassment Laws</h3>
+                <p>Understanding laws related to harassment and support.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

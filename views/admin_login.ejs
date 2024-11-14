@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <style>
+        /* Add any custom styling here */
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 2em;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+
+        .input-container {
+            margin-bottom: 1em;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding: 0.75em;
+            margin-top: 0.25em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 0.75em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            const adminIDs = ["BT23ECE049", "BT23CSE075", "BT23CSE211", "BT23CSE221"];
+            const adminID = document.getElementById("admin_id").value;
+            const securityPIN = document.getElementById("security_pin").value;
+
+            if (!adminIDs.includes(adminID)) {
+                alert("Invalid Admin ID. Please enter a valid ID.");
+                return false;
+            }
+
+            if (securityPIN !== "23456") {
+                alert("Invalid Security PIN. Please enter the correct PIN.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Admin Login</h2>
+        <form action="/admin_login" method="POST" onsubmit="return validateForm()">
+            <label for="admin_id"><i class="fas fa-user-shield"></i> Admin ID</label>
+            <div class="input-container">
+                <input type="text" id="admin_id" name="admin_id" placeholder="Enter your admin ID" required>
+            </div>
+
+            <label for="security_pin"><i class="fas fa-key"></i> Security PIN</label>
+            <div class="input-container">
+                <input type="password" id="security_pin" name="security_pin" placeholder="Enter your security PIN" required>
+            </div>
+
+            <% if (typeof error !== 'undefined' && error) { %>
+                <div class="error-message" style="color: red;"><%= error %></div>
+            <% } %>
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>

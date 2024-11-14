@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #7f00ff, #e100ff); /* Purple gradient */
+            color: white; /* White text for contrast */
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px; /* Header title font size */
+            color: white; /* White text for header */
+        }
+
+        nav {
+            display: flex;
+            gap: 20px; /* Space between nav items */
+        }
+
+        nav a {
+            color: white; /* White color for nav links */
+            text-decoration: none;
+            font-size: 18px; /* Font size for nav links */
+        }
+
+        nav a:hover {
+            text-decoration: underline; /* Underline links on hover */
+        }
+
+        /* Main Content Area */
+        .content {
+            padding: 40px;
+            text-align: center; /* Center the content */
+        }
+
+        .content h2 {
+            color: #ffffff; /* White color for section titles */
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 18px; /* Font size for paragraphs */
+            color: #f0f0f0; /* Light gray for paragraph text */
+        }
+
+        .section {
+            background-color: rgba(138, 43, 226, 0.1); /* Slightly transparent violet background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            margin: 20px auto; /* Add some margin for separation */
+            width: 80%; /* Make the section block a bit narrower */
+            color: white; /* White text inside content blocks */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+
+    <div class="dashboard-container">
+        <h2>Welcome, Admin <%= admin_id %></h2>
+        <p>This is your admin dashboard. You are successfully logged in.</p>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="content">
+        <!-- Data Analysis Section -->
+        <div class="section" id="data-analysis">
+            <h2>Data Analysis Map</h2>
+            <p>Here you can view and analyze data trends related to the users and their behavior.</p>
+            <!-- Add the map/chart/graph or other relevant content here -->
+        </div>
+
+        <!-- User Detail Section -->
+        <div class="section" id="user-detail">
+            <h2>User Detail</h2>
+            <p>Detailed information about the registered users, including demographics and activity logs.</p>
+            <!-- Add user data and management options here -->
+        </div>
+
+        <!-- Counselor Schedule Section -->
+        <div class="section" id="counselor-schedule">
+            <h2>Counselor Schedule</h2>
+            <p>Manage the schedule and appointments for the counselors.</p>
+            <!-- Add counselor schedule table, calendar, or management tools here -->
+        </div>
+    </div>
+
+</body>
+</html>
