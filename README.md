@@ -19,5 +19,5 @@ AASA (Actionable Assistance for Safety, Hope, and Awareness) is a platform dedic
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/AASA.git
+   git clone https://github.com/SidrahAaishah/AASA.git
    cd AASA
